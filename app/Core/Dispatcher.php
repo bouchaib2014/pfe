@@ -13,9 +13,12 @@ class Dispatcher{
 
     function loadController(){
         $name = ucfirst($this->request->controller).'Controller';
-        $file = '/app/Controller/'.$name;
-        new $name();
-        return true;
+        $file = '/app/Controller/'.$name.'.php';
+        echo $file;
+        if(file_exists($file)){
+            new $name();
+        }
+
     }
 
 }

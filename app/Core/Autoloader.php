@@ -16,17 +16,13 @@ class Autoloader{
      * @param $class string Le nom de la classe à charger
      */
     static function autoload($class){
-        require '../app/Core/Dispatcher.php';
-        if(class_exists( $class . '.php')){
-            require $class . '.php';
-        }else if(class_exists('../app/Core/' . $class . '.php')){
+
+        if(file_exists('../app/Core/'.$class.'.php')){
+            require '../app/Core/'.$class.'.php';
+        }else if(file_exists('../app/Controller/' . $class . '.php')){
             require '../Controller/' . $class . '.php';
         }
 
     }
 
-    /**
-     * require 'autoloader.php'; 
-     * Autoloader::register(); 
-     */
 }

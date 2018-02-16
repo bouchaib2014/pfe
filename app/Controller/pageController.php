@@ -8,5 +8,8 @@
 
 class pageController extends Controller
 {
-
+    function __construct()
+    {
+        echo "\n ENNBOU";
+    }
 }
