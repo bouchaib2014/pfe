@@ -8,17 +8,18 @@ class Dispatcher{
         $this->request = new Request();
         Router::parse($this->request);
         print_r($this->request);
-        $this->loadController();
+        $controller = $this->loadController();
+        call_user_func_array(array($controller, $this->request->action), $this->request->params);
     }
 
     function loadController(){
         $name = ucfirst($this->request->controller).'Controller';
-        $file = '/app/Controller/'.$name.'.php';
-        echo $file;
-        if(file_exists($file)){
-            new $name();
+        $file = ROOT.'app/Controller/'.$name.'.php';
+        if(!file_exists($file)){
+            return null;
+        }else{
+            return new $name;
         }
-
     }
 
 }

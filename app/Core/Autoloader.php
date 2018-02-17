@@ -17,10 +17,10 @@ class Autoloader{
      */
     static function autoload($class){
 
-        if(file_exists('../app/Core/'.$class.'.php')){
-            require '../app/Core/'.$class.'.php';
-        }else if(file_exists('../app/Controller/' . $class . '.php')){
-            require '../Controller/' . $class . '.php';
+        if(file_exists(ROOT.'app/Core/'.$class.'.php')){
+            require ROOT.'app/Core/'.$class.'.php';
+        }else if(file_exists(ROOT.'app/Controller/' . $class . '.php')){
+            require ROOT.'app/Controller/' . $class . '.php';
         }
 
     }

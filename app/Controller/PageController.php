@@ -10,6 +10,11 @@ class pageController extends Controller
 {
     function __construct()
     {
-        echo "\n ENNBOU";
+        echo "ENNBOU";
     }
+
+    function p1(){
+        echo "params";
+    }
+
 }
