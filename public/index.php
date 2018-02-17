@@ -7,8 +7,7 @@ define('ROOT',str_replace('\\', '/', dirname(dirname(__FILE__))."/"));
 
 require '../vendor/autoload.php';
 
-new App();
 
-new Dispatcher();
+require 'pages/index.php';
 
 
