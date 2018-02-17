@@ -2,6 +2,9 @@
 /**
  * Class Autoloader
  */
+
+namespace Core;
+
 class Autoloader{
 
     /**

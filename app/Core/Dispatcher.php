@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Dispatcher{
 
     var $request;
@@ -9,7 +11,7 @@ class Dispatcher{
         Router::parse($this->request);
         print_r($this->request);
         $controller = $this->loadController();
-        call_user_func_array(array($controller, $this->request->action), $this->request->params);
+
     }
 
     function loadController(){
@@ -18,7 +20,7 @@ class Dispatcher{
         if(!file_exists($file)){
             return null;
         }else{
-            return new $name;
+            return new $name();
         }
     }
 

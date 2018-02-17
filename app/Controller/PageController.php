@@ -6,6 +6,9 @@
  * Time: 10:21 PM
  */
 
+namespace Controller;
+use Core\Controller;
+
 class pageController extends Controller
 {
     function __construct()

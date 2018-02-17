@@ -1,7 +1,14 @@
 <?php
 
-define('ROOT',str_replace('\\', '/', dirname(dirname(__FILE__))."/"));
-require '../app/Core/Autoloader.php';
+use Framework\App;
+use Core\Dispatcher;
 
-Autoloader::register();
+define('ROOT',str_replace('\\', '/', dirname(dirname(__FILE__))."/"));
+
+require '../vendor/autoload.php';
+
+new App();
+
 new Dispatcher();
+
+
